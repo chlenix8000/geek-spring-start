@@ -1,0 +1,3 @@
+com\geekbrains\Entities\Product.class
+com\geekbrains\Entities\ProductRepository.class
+com\geekbrains\Controllers\ProductsController.class
