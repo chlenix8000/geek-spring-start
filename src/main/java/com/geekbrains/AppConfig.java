@@ -15,33 +15,33 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @ComponentScan("com.geekbrains")
 public class AppConfig implements WebMvcConfigurer {
 
-  @Override
-  public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/"
-    );
-  }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/"
+        );
+    }
 
-  @Bean
-  public SpringResourceTemplateResolver templateResolver() {
-    SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
-    templateResolver.setPrefix("/WEB-INF/templates/");
-    templateResolver.setSuffix(".html");
-    return templateResolver;
-  }
+    @Bean
+    public SpringResourceTemplateResolver templateResolver() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setPrefix("/WEB-INF/templates/");
+        templateResolver.setSuffix(".html");
+        return templateResolver;
+    }
 
-  @Bean
-  public SpringTemplateEngine templateEngine() {
-    SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-    templateEngine.setTemplateResolver(templateResolver());
-    return templateEngine;
-  }
+    @Bean
+    public SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(templateResolver());
+        return templateEngine;
+    }
 
-  @Bean
-  public ThymeleafViewResolver thymeleafViewResolver() {
-    ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
-    thymeleafViewResolver.setTemplateEngine(templateEngine());
-    thymeleafViewResolver.setCharacterEncoding("UTF-8");
-    return thymeleafViewResolver;
-  }
+    @Bean
+    public ThymeleafViewResolver thymeleafViewResolver() {
+        ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
+        thymeleafViewResolver.setTemplateEngine(templateEngine());
+        thymeleafViewResolver.setCharacterEncoding("UTF-8");
+        return thymeleafViewResolver;
+    }
 }
 

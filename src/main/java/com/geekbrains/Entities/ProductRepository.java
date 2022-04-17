@@ -23,5 +23,11 @@ public class ProductRepository {
         return products;
     }
 
-    public Product getProductById(int id) {return products.get(id);}
+    public Product getProductById(int id) {
+        return products.get(id);
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
 }
